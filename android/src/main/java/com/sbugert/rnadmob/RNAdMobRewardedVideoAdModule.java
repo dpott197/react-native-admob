@@ -92,6 +92,11 @@ public class RNAdMobRewardedVideoAdModule extends ReactContextBaseJavaModule imp
     }
 
     @Override
+    public void onRewardedVideoCompleted() {
+        sendEvent(EVENT_VIDEO_COMPLETED, null);
+    }
+
+    @Override
     public void onRewardedVideoAdFailedToLoad(int errorCode) {
         String errorString = "ERROR_UNKNOWN";
         String errorMessage = "Unknown error";
