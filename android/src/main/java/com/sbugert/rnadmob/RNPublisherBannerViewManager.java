@@ -151,6 +151,7 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
             }
         }
         if (slot != null && slot.equalsIgnoreCase("spon")) {
+            adSizes.clear();
             adSizes.add(RNCustomAdSize.AD_SIZE_SPON);
         }
 
