@@ -16,8 +16,8 @@ public class RNCustomAdSize {
         if (!matcher.matches()) {
             return null;
         }
-        int width = Integer.parseInt(matcher.group(0));
-        int height = Integer.parseInt(matcher.group(1));
+        int width = Integer.parseInt(matcher.group(1));
+        int height = Integer.parseInt(matcher.group(2));
         return new AdSize(width, height);
     }
 }
