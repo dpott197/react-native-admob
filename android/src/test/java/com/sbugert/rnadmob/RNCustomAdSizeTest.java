@@ -10,9 +10,15 @@ public class RNCustomAdSizeTest {
 
     @Test
     public void parseCustomAdSize() {
-        AdSize adSize = RNCustomAdSize.parseCustomAdSize("{230,20}");
+        AdSize adSize = RNCustomAdSize.parseCustomAdSize("{220,30}");
         assertNotNull(adSize);
-        assertEquals(230, adSize.getWidth());
-        assertEquals(20, adSize.getHeight());
+        assertEquals(220, adSize.getWidth());
+        assertEquals(30, adSize.getHeight());
+    }
+
+    @Test
+    public void parseCustomAdSizeNegative() {
+        AdSize adSize = RNCustomAdSize.parseCustomAdSize("220,30");
+        assertNull(adSize);
     }
 }

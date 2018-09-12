@@ -12,7 +12,7 @@ public class RNCustomAdSize {
 
     @Nullable
     public static AdSize parseCustomAdSize(CharSequence adSize) {
-        Matcher matcher = Pattern.compile("\\{([0-9]*),([0-9]*)}").matcher(adSize);
+        Matcher matcher = Pattern.compile("\\{([0-9]*),([0-9]*)\\}").matcher(adSize);
         if (!matcher.matches()) {
             return null;
         }
