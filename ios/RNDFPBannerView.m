@@ -1,4 +1,5 @@
 #import "RNDFPBannerView.h"
+#import "RNAdMobUtils.h"
 
 #if __has_include(<React/RCTBridgeModule.h>)
 #import <React/RCTBridgeModule.h>
@@ -63,7 +64,7 @@
 
 - (void)setValidAdSizes:(NSArray *)adSizes
 {
-    NSMutableArray *validAdSizes = [[NSMutableArray alloc] initWithCapacity:adSizes.count];
+    __block NSMutableArray *validAdSizes = [[NSMutableArray alloc] initWithCapacity:adSizes.count];
     [adSizes enumerateObjectsUsingBlock:^(id jsonValue, NSUInteger idx, __unused BOOL *stop) {
         GADAdSize adSize = [RCTConvert GADAdSize:jsonValue];
         if (GADAdSizeEqualToSize(adSize, kGADAdSizeInvalid)) {
@@ -80,6 +81,11 @@
     if(![customTargeting isEqual:_customTargeting]) {
         _customTargeting = customTargeting;
     }
+}
+
+- (void)setTestDevices:(NSArray *)testDevices
+{
+    _testDevices = RNAdMobProcessTestDevices(testDevices, kDFPSimulatorID);
 }
 
 -(void)layoutSubviews
