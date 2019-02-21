@@ -150,10 +150,6 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
                 slot = slotObject.toString();
             }
         }
-        if (slot != null && slot.equalsIgnoreCase("spon")) {
-            adSizes.clear();
-            adSizes.add(RNCustomAdSize.AD_SIZE_SPON);
-        }
 
         if (adSizes.size() == 0) {
             adSizes.add(AdSize.BANNER);
