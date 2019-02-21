@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RNCustomAdSize {
-    public static final AdSize AD_SIZE_SPON = new AdSize(220, 30);
 
     @Nullable
     public static AdSize parseCustomAdSize(CharSequence adSize) {
